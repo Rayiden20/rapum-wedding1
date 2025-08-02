@@ -1,0 +1,171 @@
+/* Font & Reset */
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('img/wedding-background.jpg') no-repeat center center / cover;
+}
+
+.hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+  font-family: 'Sacramento', cursive;
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.hero h4 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+/* Button Styling */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  background-color: #f14e95;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-lg {
+  font-size: 1.25rem;
+  padding: 1rem 1.5rem;
+}
+
+.btn:hover {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* RSVP Section */
+.rsvp {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.rsvp h2 {
+  font-family: 'Sacramento', cursive;
+  font-size: 2.5rem;
+  color: #f14e95;
+  margin-bottom: 1rem;
+}
+
+.rsvp p {
+  font-size: 1rem;
+  color: #343a40;
+  margin-bottom: 2rem;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 1rem;
+  background-color: #fdfdfd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #343a40;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  border-color: #f14e95;
+  outline: none;
+}
+
+/* Error Styling */
+.error-message {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #dc3545;
+}
+
+input.error,
+select.error {
+  border-color: #dc3545;
+  background-color: #fff0f0;
+}
+
+/* Animasi Fade-In */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h4 {
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn-lg {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+}

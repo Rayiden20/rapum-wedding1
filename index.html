@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Pernikahan Rayiden & Putri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Undangan Pernikahan</h1>
+      <h1>Rayiden Arfah & Putri Maharani</h1>
+      <h4>Sabtu, 10 Januari 2026</h4>
+      <p>Dengan penuh cinta, kami mengundang Anda untuk hadir dalam hari bahagia kami.</p>
+      <a href="#rsvp" class="btn btn-lg">Konfirmasi Kehadiran</a>
+    </div>
+  </section>
+
+  <!-- RSVP Section -->
+  <section class="rsvp" id="rsvp">
+    <div class="container">
+      <h2>Konfirmasi Kehadiran</h2>
+      <p>Silakan isi formulir berikut untuk mengonfirmasi kehadiranmu.</p>
+      <form id="rsvpForm" novalidate>
+        <div class="form-group">
+          <label for="name">Nama Lengkap</label>
+          <input type="text" id="name" name="name" required />
+          <small class="error-message" id="nameError"></small>
+        </div>
+        <div class="form-group">
+          <label for="attendance">Kehadiran</label>
+          <select id="attendance" name="attendance" required>
+            <option value="">-- Pilih --</option>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+          </select>
+          <small class="error-message" id="attendanceError"></small>
+        </div>
+        <button type="submit" class="btn">Kirim via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h2>Galeri Kenangan</h2>
+    <div class="gallery-grid">
+      <img src="img/WhatsApp Image 2025-08-02 at 12.16.47 (1).jpeg" alt="Foto 1" style="width: 100vw; height: 100vh; object-fit: cover;" />
+      <img src="img/WhatsApp Image 2025-08-02 at 12.16.47.jpeg" alt="Foto 2" style="width: 100vw; height: 100vh; object-fit: cover;"/>
+      <img src="img/WhatsApp Image 2025-08-02 at 12.16.48.jpeg" alt="Foto 3" style="width: 100vw; height: 100vh; object-fit: cover;"/>
+    </div>
+  </section>
+
+  <!-- WhatsApp Script -->
+  <script>
+    document.getElementById("rsvpForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      let valid = true;
+
+      document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+      document.querySelectorAll("input, select").forEach(el => el.classList.remove("error"));
+
+      const name = document.getElementById("name");
+      const attendance = document.getElementById("attendance");
+
+      if (name.value.trim() === "") {
+        document.getElementById("nameError").textContent = "Nama wajib diisi.";
+        name.classList.add("error");
+        valid = false;
+      }
+
+      if (attendance.value === "") {
+        document.getElementById("attendanceError").textContent = "Silakan pilih status kehadiran.";
+        attendance.classList.add("error");
+        valid = false;
+      }
+
+      if (valid) {
+        const message = `Halo! Saya ${name.value}, dan saya ${attendance.value.toLowerCase()} di acara pernikahan Rayiden & Putri.`;
+        const encoded = encodeURIComponent(message);
+        window.open(`https://wa.me/6281285931296?text=${encoded}`, "_blank");
+      }
+    });
+  </script>
+
+</body>
+</html>
